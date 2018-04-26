@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "SoundsDL",
+  "author": "Yoann Chane Kive",
+  "description": "Sounds.com Download",
+  "version": "0.0.2",
+  "icons": {
+    "19": "icons/Icon-19.png",
+    "38": "icons/Icon-38.png",
+    "48": "icons/Icon-48.png",
+    "128": "icons/Icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.sounds.com/*"],
+      "js": ["main.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["listen.js"],
+    "persistent": true
+  },
+  "web_accessible_resources": [
+    "icons/*.png"
+  ],
+  "permissions": [
+    "webRequest",
+    "background",
+    "tabs",
+    "webRequestBlocking",
+    "https://sounds.com/*",
+    "https://*.sounds.com/*"
+  ]
+}
